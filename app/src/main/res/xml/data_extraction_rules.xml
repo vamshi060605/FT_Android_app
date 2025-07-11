@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Data extraction rules for Finance Tracker app
+   Controls what data is backed up and transferred between devices
+   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   for details.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Include user preferences and settings -->
+        <include domain="sharedpref" path="."/>
+        <!-- Exclude sensitive financial data from cloud backup -->
+        <exclude domain="database" path="transactions.db"/>
+        <exclude domain="file" path="finance_data_*.csv"/>
+    </cloud-backup>
+    
+    <device-transfer>
+        <!-- Include user preferences for device transfer -->
+        <include domain="sharedpref" path="."/>
+        <!-- Exclude large data files from device transfer -->
+        <exclude domain="file" path="finance_data_*.csv"/>
+    </device-transfer>
+</data-extraction-rules>

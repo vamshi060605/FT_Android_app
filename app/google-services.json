@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "377340528995",
+    "project_id": "ftandroid-c36b5",
+    "storage_bucket": "ftandroid-c36b5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377340528995:android:34d485161c5935608a6b56",
+        "android_client_info": {
+          "package_name": "com.vt.ft_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377340528995-p0ugs7s1s5pome2ho3hedulaqntn9ama.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vt.ft_android",
+            "certificate_hash": "bf81f97d3c9de3b9f77dcfe4c25db9ae58880031"
+          }
+        },
+        {
+          "client_id": "377340528995-uhmgbchs7upgr7c8c5dvojqge1a91tlt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm9MdWrKOPL9tHNXClAXF_G-EYSwwyhpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377340528995-uhmgbchs7upgr7c8c5dvojqge1a91tlt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

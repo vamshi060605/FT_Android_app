@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AndroidManifest.xml - Main configuration file for the Finance Tracker Android app -->
+<!-- 
+This manifest defines:
+- App package name and version information
+- Main activity and application class
+- Required permissions for Firebase, internet, and file sharing
+- File provider configuration for CSV export
+- App theme and icon settings
+- Google Sign-In configuration
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet Permission - Required for Firebase operations and data sync -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Network State Permission - For checking connectivity status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Read External Storage Permission - For CSV file export functionality -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
+    <!-- Write External Storage Permission - For saving exported CSV files -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FT_Android"
+        tools:targetApi="31">
+        
+        <!-- Main Activity - Entry point of the application -->
+        <!-- 
+        This activity:
+        - Handles the main app flow (onboarding -> auth -> main app)
+        - Manages Google Sign-In integration
+        - Contains the navigation drawer and all main screens
+        - Uses edge-to-edge display for modern Android UI
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FT_Android"
+            android:windowSoftInputMode="adjustResize">
+            
+            <!-- Intent filter for app launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- File Provider Configuration -->
+        <!-- 
+        This provider enables secure file sharing for CSV export functionality.
+        It allows the app to share CSV files with other apps (email, cloud storage, etc.)
+        while maintaining security through proper URI handling.
+        
+        Configuration:
+        - Authority: Unique identifier for the file provider
+        - Grant URI permissions: Allows temporary access to shared files
+        - Path: Specifies which directories can be shared
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            
+            <!-- Meta-data pointing to file paths configuration -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        
+        <!-- Google Services Configuration -->
+        <!-- 
+        This meta-data tag points to the google-services.json file
+        which contains Firebase configuration including:
+        - Project ID and API keys
+        - Google Sign-In configuration
+        - Firestore database settings
+        - Authentication providers
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+            
+    </application>
+
+</manifest>

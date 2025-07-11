@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- file_paths.xml - File provider paths configuration for the Finance Tracker app -->
+<!-- 
+This file defines which directories the FileProvider can access for secure file sharing.
+It's used in conjunction with the FileProvider in AndroidManifest.xml to enable
+CSV export functionality while maintaining security.
+
+Security Benefits:
+- Restricts file access to specific directories only
+- Prevents unauthorized access to app's private files
+- Enables secure sharing of exported data files
+-->
+
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Cache Directory Access -->
+    <!-- 
+    This path allows access to the app's cache directory where temporary files
+    like exported CSV files are stored before sharing.
+    
+    Usage:
+    - CSV export files are created in this directory
+    - Files are shared via Intent.ACTION_SEND
+    - Files are automatically cleaned up by the system
+    - No user permission required for this directory
+    -->
+    <cache-path
+        name="shared_files"
+        path="." />
+    
+    <!-- External Cache Directory Access (Alternative) -->
+    <!-- 
+    This path provides access to external cache directory as a fallback
+    for devices with limited internal storage.
+    
+    Note: This is commented out as we primarily use internal cache
+    for better security and automatic cleanup.
+    -->
+    <!--
+    <external-cache-path
+        name="external_shared_files"
+        path="." />
+    -->
+    
+    <!-- Files Directory Access (Optional) -->
+    <!-- 
+    This path could be used for persistent file storage if needed.
+    Currently not used as we prefer cache directory for temporary exports.
+    -->
+    <!--
+    <files-path
+        name="persistent_files"
+        path="." />
+    -->
+    
+</paths> 
