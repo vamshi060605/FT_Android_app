@@ -35,6 +35,26 @@ A modern, cloud-powered personal finance tracking Android app built using Kotlin
 - **Architecture**: MVVM + Repository Pattern  
 - **Async & State Management**: Coroutines, StateFlow
 
+## 🚧 Future Advancements
+
+The current version provides a solid foundation for manual finance management. Planned enhancements aim to improve automation, intelligence, and user engagement:
+
+- **🔄 Smart Categorization of Online Payments**  
+  Automatically categorize expenses based on merchant names, transaction metadata, or payment methods (e.g., UPI, card, wallets). through reading the SMS 
+
+- **🧠 AI-Driven Financial Assistant**  
+  Integrate lightweight ML models to offer personalized insights such as spending alerts, budget suggestions, and savings goals.
+
+- **🎮 Gamification Elements**  
+  Introduce reward systems like streaks for daily logging, achievement badges, progress bars, and visual motivators to encourage consistent usage.
+
+- **📊 Predictive Analytics**  
+  Visualize trends and forecasts using historical spending data, and identify unusual spikes with anomaly detection.
+
+- **🔔 Smart Notifications**  
+  Notify users about nearing budgets, recurring subscriptions, and weekly/monthly summaries through custom reminders.
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
